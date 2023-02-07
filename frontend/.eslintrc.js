@@ -7,13 +7,14 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "@nuxtjs/eslint-config-typescript"
     ],
     "overrides": [
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaVersion": 13,
+        "parser": "@typescript-eslint/parser",
         "sourceType": "module"
     },
     "plugins": [
