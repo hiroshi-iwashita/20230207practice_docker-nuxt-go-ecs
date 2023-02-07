@@ -4,12 +4,19 @@
 
 <!-- commandをコメントアウトする -->
 $ docker-compose build
+
 $ docker-compose up
+
 $ docker-compose exec frontend bash
+
 $ npx nuxi init . --force
+
 $ npm install
+
 $ npm run dev
+
 $ exit
+
 $ docker-compose down
 <!-- commandのコメントアウトを外す -->
 $ docker-compose up -d
