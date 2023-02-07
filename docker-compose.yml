@@ -1,50 +1,11 @@
 version: "3.9"
 services:
-  # db:
-  #   container_name: db
-  #   build:
-  #     context: ./build/db
-  #     dockerfile: Dockerfile
-  #     target: dev
-  #   # platform: linux/x86_64 // add this for Apple Silicon
-  #   tty: true
-  #   restart: always
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - ${DB_PORT}:${DB_PORT}
-  #   volumes:
-  #     - ./build/db/init:/docker-entrypoint-initdb.d
-  #     - type: volume
-  #       source: db
-  #       target: /var/lib/mysql
-  #   networks:
-  #     - practice_docker-nuxt-go-ecs_network
-
-  # api:
-  #   container_name: api
-  #   build:
-  #     context: build/api
-  #     dockerfile: Dockerfile
-  #     target: dev
-  #   tty: true
-  #   stdin_open: true
-  #   restart: always
-  #   volumes:
-  #     - ./backend:/go/src/app
-  #   working_dir: "/backend"
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - ${API_PORT}:${API_PORT}
-  #   depends_on:
-  #     - ${MYSQL_HOST}
-  #   networks:
-  #     - practice_docker-nuxt-go-ecs_network
-  
-  nuxt:
-    container_name: nuxt
-    build: build/nuxt
+  frontend:
+    container_name: frontend
+    build:
+      context: build/frontend
+      dockerfile: Dockerfile
+      target: dev
     volumes:
       - ./frontend:/frontend:cached
       - nuxt_node_modules:/frontend/node_modules
@@ -62,8 +23,6 @@ services:
       - practice_docker-nuxt-go-ecs_network
 
 volumes:
-  # db:
-  #   name: db-volume
   nuxt_node_modules:
     name: nuxt-node-modules-volume
 

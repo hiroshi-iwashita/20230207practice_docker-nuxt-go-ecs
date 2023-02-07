@@ -6,11 +6,11 @@ RUN go install github.com/cosmtrek/air@v1.29.0
 # to migrate to mysql
 # RUN go install -tags mysql github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
-RUN mkdir /go/src/app
+RUN mkdir /backend/go/src/app
 
-WORKDIR /go/src/app
+WORKDIR /backend/go/src/app
 
-ADD . /go/src/app
+ADD . /backend/go/src/app
 
 EXPOSE 8080
 
