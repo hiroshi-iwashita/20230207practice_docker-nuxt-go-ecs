@@ -13,7 +13,7 @@ module.exports = {
   ],
   overrides: [],
   parserOptions: {
-    ecmaVersion: 13,
+    ecmaVersion: 2021,
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
