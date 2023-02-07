@@ -7,5 +7,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxtjs/color-mode'],
+  typescript: {
+    strict: true,
+  },
 });
