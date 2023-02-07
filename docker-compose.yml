@@ -24,14 +24,15 @@ services:
   # api:
   #   container_name: api
   #   build:
-  #     context: ./build/api
+  #     context: build/api
   #     dockerfile: Dockerfile
   #     target: dev
   #   tty: true
   #   stdin_open: true
   #   restart: always
   #   volumes:
-  #     - .:/go/src/app
+  #     - ./backend:/go/src/app
+  #   working_dir: "/backend"
   #   env_file:
   #     - .env
   #   ports:
@@ -45,9 +46,9 @@ services:
     container_name: nuxt
     build: build/nuxt
     volumes:
-      - ./src:/src:cached
-      - nuxt_node_modules:/src/node_modules
-    working_dir: "/src"
+      - ./frontend:/frontend:cached
+      - nuxt_node_modules:/frontend/node_modules
+    working_dir: "/frontend"
     ports:
       - 3000:3000
       - 24678:24678
