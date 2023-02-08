@@ -4,5 +4,5 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["nuxt", "nuxtjs", "tailwindcss"]
+  "cSpell.words": ["nuxi", "nuxt", "nuxtjs", "tailwindcss", "tmpl", "WORKDIR"]
 }
