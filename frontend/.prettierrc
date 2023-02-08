@@ -1,7 +1,9 @@
 {
-  "singleQuote": true,
-  "semi": true,
+  "singleQuote": false,
+  "semi": false,
   "vueIndentScriptAndStyle": true,
+  "printWidth": 100,
+  "tabWidth": 2,
   "extends": [
     "plugin:vue/vue3-recommended",
     "eslint:recommended",
