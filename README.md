@@ -35,3 +35,14 @@ $ docker-compose up -d
 $ docker-compose build
 
 $ docker-compose up
+
+---
+
+### build - Postgres ver.14.6
+
+- [Docker で PostgreSQL 上にデータベースを作成しよう](https://zenn.dev/farstep/books/7acd1a7fee7e18/viewer/43e8ed)
+- [【Docker】postgresql の構築](https://zenn.dev/re24_1986/articles/b76c3fd8f76aec)
+
+$ docker-compose build
+
+$ docker-compose up

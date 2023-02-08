@@ -1,5 +1,27 @@
 version: "3.9"
 services:
+  db:
+    container_name: db
+    build:
+      context: ./build/db
+      dockerfile: Dockerfile
+      target: dev
+    # platform: linux/x86_64  ## add this for Apple Silicon
+    tty: true
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mydb
+    volumes:
+      - type: volume
+        source: db
+        target: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - practice_docker-nuxt-go-ecs_network
+
   backend:
     container_name: backend
     build:
@@ -13,13 +35,15 @@ services:
       - ./backend:/backend
     ports:
       - 8080:8080
+    depends_on:
+      - db
     networks:
       - practice_docker-nuxt-go-ecs_network
 
   frontend:
     container_name: frontend
     build:
-      context: build/frontend
+      context: ./build/frontend
       dockerfile: Dockerfile
       target: dev
     volumes:
@@ -38,6 +62,8 @@ services:
       - practice_docker-nuxt-go-ecs_network
 
 volumes:
+  db:
+    name: db-volume
   nuxt_node_modules:
     name: nuxt-node-modules-volume
 

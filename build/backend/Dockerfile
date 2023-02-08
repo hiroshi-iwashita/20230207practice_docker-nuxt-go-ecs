@@ -5,9 +5,11 @@ RUN go install github.com/cosmtrek/air@v1.29.0
 
 RUN mkdir backend
 
-WORKDIR /backend
+ENV ROOT=/backend
 
-ADD . /backend
+WORKDIR ${ROOT}
+
+ADD . ${ROOT}
 
 EXPOSE 8080
 
