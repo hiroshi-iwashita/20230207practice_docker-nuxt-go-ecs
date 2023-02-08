@@ -3,4 +3,10 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })
