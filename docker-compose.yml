@@ -1,5 +1,21 @@
 version: "3.9"
 services:
+  backend:
+    container_name: backend
+    build:
+      context: ./build/backend
+      dockerfile: Dockerfile
+      target: dev
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 8080:8080
+    networks:
+      - practice_docker-nuxt-go-ecs_network
+
   frontend:
     container_name: frontend
     build:
@@ -9,7 +25,6 @@ services:
     volumes:
       - ./frontend:/frontend:cached
       - nuxt_node_modules:/frontend/node_modules
-    working_dir: "/frontend"
     ports:
       - 3000:3000
       - 24678:24678
