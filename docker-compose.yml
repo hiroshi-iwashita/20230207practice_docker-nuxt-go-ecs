@@ -14,6 +14,7 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=mydb
     volumes:
+      - ./build/db/init:/docker-entrypoint-initdb.d
       - type: volume
         source: db
         target: /var/lib/postgresql/data
@@ -57,7 +58,7 @@ services:
       - HOST=0.0.0.0
       - port=3000
       - CHOKIDAR_USEPOLLING=true
-    command: sh -c "npm run dev" ## 初期構築段階ではコメントアウトする
+    command: sh -c "npm install && npm run dev" ## 初期構築段階ではコメントアウトする
     networks:
       - practice_docker-nuxt-go-ecs_network
 
