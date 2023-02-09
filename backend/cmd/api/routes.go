@@ -38,10 +38,9 @@ func (app *application) routes() http.Handler {
 		AllowCredentials: true,
 		MaxAge:           300,
 	}))
-
-	mux.Post("/users/login", app.Login)
-	mux.Post("/users/logout", app.Logout)
-	mux.Post("/validate-token", app.ValidateToken)
+	
+	mux.Get("/", app.test)
+	mux.Get("/users", app.AllUsers)
 
 	return mux
 }

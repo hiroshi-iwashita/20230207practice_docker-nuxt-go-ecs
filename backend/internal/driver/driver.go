@@ -39,6 +39,7 @@ func ConnectPostgres(dsn string) (*DB, error) {
 	return dbConn, nil
 }
 
+
 func testDB(d *sql.DB) error {
 	err := d.Ping()
 	if err != nil {

@@ -29,12 +29,12 @@ type application struct {
 // main is the main entry point for our application
 func main() {
 	var cfg config
-	cfg.port = 8082
+	cfg.port = 8080
 
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	dsn := os.Getenv("DSN")
+	dsn := "postgres://root:password@db:5432/mydb"
 	environment := os.Getenv("ENV")
 
 	db, err := driver.ConnectPostgres(dsn)
