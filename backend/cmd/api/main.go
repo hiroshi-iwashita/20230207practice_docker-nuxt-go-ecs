@@ -34,7 +34,8 @@ func main() {
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	dsn := "postgres://root:password@db:5432/mydb"
+	dsn := "postgres://root:password@db:5432/db"
+
 	environment := os.Getenv("ENV")
 
 	db, err := driver.ConnectPostgres(dsn)

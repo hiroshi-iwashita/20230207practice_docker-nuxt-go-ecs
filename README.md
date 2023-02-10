@@ -46,6 +46,9 @@ $ docker-compose up
 - [【Docker】起動時に DB の初期データを投入する](https://nandakagoodvibes.hatenablog.com/entry/2022/02/06/163420)
 - [golang-migrate での PostgreSQL マイグレーション備忘録](https://zenn.dev/keyamin/articles/24695c455c1591)
 - [sqlc と golang-migrate で PostgreSQL を扱う](https://zenn.dev/tchssk/articles/a701d3ce5f9b6b)
+- [golang-migrate チュートリアル(migration 編)](https://qiita.com/kouji0705/items/07e0a3d57a74b5af9817)
+- [【エンジニア向け】Docker で Postgres 立ち上げ時に初期データを自動で作成する](https://hiro-engineer-blog.com/2021/05/15/blog-000055/)
+- [【すぐに使える！】Docker で PostgreSQL を環境構築する手順](https://www.lulu-happy-dayz.com/docker-environment-postgresql/)
 
 $ docker-compose build
 

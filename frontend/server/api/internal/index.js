@@ -3,11 +3,11 @@ export default defineEventHandler(async (event) => {
   const { apiBaseURL } = useRuntimeConfig()
   console.log(apiBaseURL)
 
-  const { data, pending, error, refresh } = await $fetch(() => `/`, {
+  const { data, pending, error, refresh } = await $fetch(() => `/users`, {
     baseURL: apiBaseURL,
     lazy: true,
     server: true,
-    pick: ["data"],
+    // pick: ["data"],
   })
 
   if (process.server) console.log(data)

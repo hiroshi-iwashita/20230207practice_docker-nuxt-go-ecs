@@ -12,7 +12,7 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=mydb
+      - POSTGRES_DB=db
     volumes:
       - ./build/db/init:/docker-entrypoint-initdb.d
       - type: volume
